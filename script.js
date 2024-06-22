@@ -1,46 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+let chaticon = document.querySelector(".chaticon");
+let menu = document.querySelector(".menu");
+let callicon = document.querySelector(".callicon");
+let statusicon = document.querySelector(".statusicon");
+let chat = document.querySelectorAll(".chats");
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whatsapp</title>
-    <link rel="stylesheet" href="style.css">
+let leftbox = document.querySelector('.left')
+let rightbox = document.querySelector('.right')
+let icons = document.querySelectorAll('i')
 
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
+// Add a click event listener to the button
+menu.addEventListener('click', () => {
+    if (leftbox.style.display === "none") {
+        leftbox.style.display = "block";
+        rightbox.style.width = "71vw";
+        rightbox.style.borderRadius = "0";
+    } else {
+        leftbox.style.display = "none";
+        rightbox.style.width = "96vw";
+        rightbox.style.borderRadius = "8px 0 0 5px";
+    }
+});
 
-<body>
-    <div class="main">
-        <!-- logo part of whatsapp -->
+//add icon active action
+// Add click event listener to each icon
+icons.forEach(icon => {
+    chaticon.style.backgroundColor = '#252525';
+    chaticon.style.borderRadius = '3px';
+    chaticon.style.borderLeft = '3px solid rgb(6, 167, 6)';
+    icon.addEventListener('click', () => {
+        // Remove the active class from all icons
+        icons.forEach(i => {
+            i.style.backgroundColor = '';
+            i.style.borderRadius = '';
+            i.style.borderLeft = '';
+        });
 
-        <div class="logo">
-            <i class="ri-whatsapp-line"></i>
-            <p style="color: white;">WhatsApp</p>
-        </div>
+        // Add the active class to the clicked icon
+        icon.style.backgroundColor = '#252525';
+        icon.style.borderRadius = '3px';
+        icon.style.borderLeft = '3px solid rgb(6, 167, 6)';
+    });
+});
 
-        <!-- all side icons of whatsapp -->
-        <div class="icons">
-            <dip class="top">
-                <i class="ri-menu-line menu"></i>
-                <i class="ri-chat-voice-line chaticon"></i>
-                <i class="ri-phone-line callicon"></i>
-                <i class="ri-focus-2-line statusicon"></i>
-            </dip>
-            <div class="bottom">
-                <i class="ri-star-line"></i>
-                <i class="ri-archive-line"></i>
-                <hr>
-                <i class="ri-settings-4-line"></i>
-                <i class="ri-user-line"></i>
+//add call button function
+callicon.addEventListener('click', () => {
+    leftbox.innerHTML = `
+    <div class="chat">
+                <p>Calls</p>
+                <div class="chatsymbols">
+                    <i class="ri-phone-line"></i>
+                    <i class="ri-menu-5-line"></i>
+                </div>
             </div>
-        </div>
 
-        <!-- Chat list part of whatsapp -->
-        <div class="left">
+            <!-- search bar of whatsapp -->
+            <div class="search">
+                <input type="text" placeholder="Search or start a new call">
+                <i class="ri-search-line"></i>
+            </div>
 
-            <!-- Chat icon part in left bar -->
-            <div class="chat">
+            <div class="chatbox">
+                <div class="chats">
+                    <div class="profilepic">
+                        <img src="images/photopro.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p id="name">Harsh Pandey</p>
+                        <p id="msg"><i class="ri-phone-line"></i> Outgoing</p>
+                    </div>
+                    <div class="time">Yesteday</div>
+                </div>`
+});
+
+chaticon.addEventListener('click', () => {
+    leftbox.innerHTML = `
+     <div class="chat">
                 <p>Chats</p>
                 <div class="chatsymbols">
                     <i class="ri-chat-new-line"></i>
@@ -156,85 +190,40 @@
                     </div>
                     <div class="time">5:15 Pm</div>
                 </div>
-            </div>
-        </div>
+            </div>`
+});
 
-        <!-- Message part of whatsapp -->
-        <div class="right">
-            <!-- call and name section of Whatsapp -->
-            <div class="up">
-                <div class="title">
-                    <div class="profilepic">
-                        <img src="images/glow.png" alt="">
+
+//add status icon functionality.
+statusicon.addEventListener('click', () => {
+    leftbox.innerHTML = `
+    <div class="chat">
+                <p>Status</p>
+                <div class="chatsymbols">
+                    <i class="ri-menu-5-line"></i>
+                </div>
+            </div>
+
+            <div class="chatbox">
+                <div style="justify-content: start; gap: 20px;" class="chats">
+                    <div style="border: 3px solid green; padding:2px;" class="profilepic">
+                        <img src="images/photopro.jpg" alt="">
                     </div>
                     <div class="info">
                         <p id="name">Mohit Pandey</p>
-                        <p id="msg">online</p>
+                        <p id="msg">Today, 2:45 Pm</p>
                     </div>
                 </div>
-
-                    <div class="call">
-                        <div class="calling">
-                            <i class="ri-phone-line"></i>
-                            <hr>
-                            <i class="ri-video-on-line"></i>
-                        </div>
-                        <i class="ri-search-line"></i>
+                <h4>Viewd Updates</h4>
+                 <div class="chatbox">
+                <div style="justify-content: start; gap: 20px;" class="chats">
+                    <div style="border: 3px solid #434343; padding:2px;" class="profilepic">
+                        <img src="images/glow.png" alt="">
                     </div>
-            </div>
+                    <div class="info">
+                        <p id="name">Harsh Pandey</p>
+                        <p id="msg">Today, 5:45 Pm</p>
+                    </div>
+                </div>`
+});
 
-            <!-- message section of WhatsApp -->
-            <div class="mid">
-                <div class="chat-container">
-                    <div class="chat-bubble sent">Hello! How are you?</div>
-                    <div class="chat-bubble received">I'm good, thanks! How about you?</div>
-                    <div class="chat-bubble sent">I'm great, thanks for asking!</div>
-                    <div class="chat-bubble received">So whats your plan for today?</div>
-                    <div class="chat-bubble sent">I'm thinking of going for a hike. What about you?</div>
-                    <div class="chat-bubble received">Sounds fun! I might just relax at home and read a book.</div>
-                    <div class="chat-bubble sent">That sounds nice too. Any book recommendations?</div>
-                    <div class="chat-bubble received">Yes, I've been reading 'The Alchemist' by Paulo Coelho. It's
-                        really good!</div>
-                    <div class="chat-bubble sent">I've heard great things about it. I'll check it out.</div>
-                    <div class="chat-bubble received">You should! Let me know how you like it.</div>
-                </div>
-            </div>
-
-            <!-- emoji and type bar of whatsapp -->
-            <div class="down">
-                <div class="emoji">
-                    <i class="ri-emoji-sticker-line"></i>
-                    <i class="ri-attachment-2"></i>
-                </div>
-                <input type="texta" placeholder="Type a message">
-                <i class="send ri-send-plane-2-line"></i>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="profilepage">
-        <div class="optionmenu">
-            <div class="items">
-                <div class="item"><i class="ri-computer-line"></i> General</div>
-                <div class="item"><i class="ri-key-2-line"></i> Account</div>
-                <div class="item"><i class="ri-wechat-line"></i> Chats</div>
-                <div class="item"><i class="ri-video-on-line"></i> Video & Voice</div>
-                <div class="item"><i class="ri-notification-3-line"></i> Notification</div>
-                <div class="item"><i class="ri-brush-line"></i> Personalization</div>
-                <div class="item"><i class="ri-hard-drive-2-line"></i> Storage</div>
-                <div class="item"><i class="ri-keyboard-box-line"></i> Shortcut</div>
-                <div class="item"><i class="ri-information-line"></i> Help</div>
-            </div>
-            <div class="close">
-                <i class="ri-user-line"></i> Profile
-            </div>
-            
-        </div>
-        <div class="profile">hellooo</div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-
-</html>

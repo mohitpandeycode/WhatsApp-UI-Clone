@@ -3,7 +3,10 @@ let menu = document.querySelector(".menu");
 let callicon = document.querySelector(".callicon");
 let statusicon = document.querySelector(".statusicon");
 let chat = document.querySelectorAll(".chats");
-
+let profilepage = document.querySelector(".profilepage");
+let settingspage = document.querySelector(".settingspage");
+let user = document.querySelector(".user")
+let settings = document.querySelector(".settings")
 let leftbox = document.querySelector('.left')
 let rightbox = document.querySelector('.right')
 let icons = document.querySelectorAll('i')
@@ -227,3 +230,29 @@ statusicon.addEventListener('click', () => {
                 </div>`
 });
 
+
+//add user logo profile page function
+profilepage.addEventListener('click', (event) => {
+    event.stopPropagation();
+})
+user.addEventListener('click', (event) => {
+    event.stopPropagation();
+    profilepage.style.left = "10px"
+})
+
+document.addEventListener('click', (event) => {
+    profilepage.style.left = "-500px"
+})
+
+//add settings logo setiings page function
+settingspage.addEventListener('click', (event) => {
+    event.stopPropagation();
+})
+settings.addEventListener('click', (event) => {
+    event.stopPropagation();
+    settingspage.style.left = "10px"
+})
+
+document.addEventListener('click', (event) => {
+    settingspage.style.left = "-500px"
+})

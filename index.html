@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whatsapp</title>
+
     <link rel="stylesheet" href="style.css">
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
@@ -31,8 +32,8 @@
                 <i class="ri-star-line"></i>
                 <i class="ri-archive-line"></i>
                 <hr>
-                <i class="ri-settings-4-line"></i>
-                <i class="ri-user-line"></i>
+                <i class="ri-settings-4-line settings"></i>
+                <i class="ri-user-line user"></i>
             </div>
         </div>
 
@@ -121,7 +122,7 @@
                         <img src="images/WhatsApp Image 2023-05-06 at 08.28.57.jpg" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Anjali Mehta</p>
+                        <p id="name">Nischay Diwedi</p>
                         <p id="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sint!</p>
                     </div>
                     <div class="time">8:30 Pm</div>
@@ -131,14 +132,14 @@
                         <img src="images/WhatsApp Image 2023-07-12 at 20.44.18.jpg" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Seema Lard</p>
+                        <p id="name">Sakasham Sahni</p>
                         <p id="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sint!</p>
                     </div>
                     <div class="time">7:41 Am</div>
                 </div>
                 <div class="chats">
                     <div class="profilepic">
-                        <img src="images/1659247349785.jpg" alt="">
+                        <img src="images/bgi.jpg" alt="">
                     </div>
                     <div class="info">
                         <p id="name">Mohit Pandey</p>
@@ -151,7 +152,7 @@
                         <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Mohit Pandey</p>
+                        <p id="name">Rakshit Joshi</p>
                         <p id="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sint!</p>
                     </div>
                     <div class="time">5:15 Pm</div>
@@ -173,14 +174,14 @@
                     </div>
                 </div>
 
-                    <div class="call">
-                        <div class="calling">
-                            <i class="ri-phone-line"></i>
-                            <hr>
-                            <i class="ri-video-on-line"></i>
-                        </div>
-                        <i class="ri-search-line"></i>
+                <div class="call">
+                    <div class="calling">
+                        <i class="ri-phone-line"></i>
+                        <hr>
+                        <i class="ri-video-on-line"></i>
                     </div>
+                    <i class="ri-search-line"></i>
+                </div>
             </div>
 
             <!-- message section of WhatsApp -->
@@ -213,6 +214,8 @@
         </div>
     </div>
 
+    <!-- profilepage by open with user icon -->
+
     <div class="profilepage">
         <div class="optionmenu">
             <div class="items">
@@ -229,9 +232,86 @@
             <div class="close">
                 <i class="ri-user-line"></i> Profile
             </div>
-            
+
         </div>
-        <div class="profile">hellooo</div>
+        <div class="profile">
+            <div class="container">
+                <div class="image">
+                    <img src="images/photopro.jpg" alt="">
+                </div>
+                <div class="nameinfo">
+                    <h3>Mohit Pandey</h3>
+                    <i class="ri-pencil-line"></i>
+                </div>
+                <div class="about">
+                    <div class="abin">
+                        <h4>About</h4>
+                        <p>ॐ कृष्णाय वासुदेवाय हरये परमात्मने । प्रणतः क्लेशनाशाय गोविंदाय नमो नमः ।।🍁</p>
+                    </div>
+                    <i class="ri-pencil-line"></i>
+                </div>
+                <div class="phonenumber">
+                    <h4>Phone</h4>
+                    <p>+91 9876543210</p>
+                </div>
+            </div>
+            <hr>
+            <div class="logout">
+                <button>Logout</button>
+                <p>Chat history on this computer will be cleared when you logout.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- setiings by open with setting icon -->
+    <div class="settingspage">
+        <div class="optionmenu">
+            <div class="items">
+                <div class="item general"><i class="ri-computer-line"></i> General</div>
+                <div class="item"><i class="ri-key-2-line"></i> Account</div>
+                <div class="item"><i class="ri-wechat-line"></i> Chats</div>
+                <div class="item"><i class="ri-video-on-line"></i> Video & Voice</div>
+                <div class="item"><i class="ri-notification-3-line"></i> Notification</div>
+                <div class="item"><i class="ri-brush-line"></i> Personalization</div>
+                <div class="item"><i class="ri-hard-drive-2-line"></i> Storage</div>
+                <div class="item"><i class="ri-keyboard-box-line"></i> Shortcut</div>
+                <div class="item"><i class="ri-information-line"></i> Help</div>
+            </div>
+            <div class="close user">
+                <i class="ri-user-line user"></i> Profile
+            </div>
+
+        </div>
+        <div class="profile">
+            <div class="container">
+                <h2>Genral</h2>
+                <p style="font-size: 18px;">Login</p>
+                <div class="nameinfo">
+                    <p>Start WhatsApp at login</p>
+                    <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+                </div>
+                <div class="language">
+                    <div class="language">
+                        <p style="font-size: 18px;">Language</p>
+                        <button><i class="ri-global-line"></i> System Default <i
+                                class="ri-arrow-down-s-line"></i></button>
+                    </div>
+                </div>
+                <div class="phonenumber">
+                   <p style="font-size: 18px;">Typing</p><br>
+                    <p style="font-size: 12px;">change typing setting for <strong>autocorrect</strong> and <strong>misspalled highlight</strong> from <u style="color: rgb(6, 167, 6);"><span>Windows Settings</span></u></p>
+                </div>
+            </div>
+            <hr>
+            <div class="logout">
+                <p>Replace text with emoji 😁</p>
+                <div style="display: flex; align-items: center; justify-content: space-around;" class="tog">
+                    <p>Emoji will replace with specefic text as you type.</p>
+                    <input type="checkbox" id="onof" /><label for="onof">Toggle</label>
+                </div>
+                <pu style="color: rgb(6, 167, 6); font-size: 13px;"><u>See list of text </u></p>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>

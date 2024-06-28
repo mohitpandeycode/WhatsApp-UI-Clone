@@ -11,19 +11,28 @@ let leftbox = document.querySelector('.left')
 let rightbox = document.querySelector('.right')
 let icons = document.querySelectorAll('i')
 
-// Add a click event listener to the button
+// Add a click event listener  to the menu button
+function setRightBoxWidth() {
+    if (window.innerWidth <= 1000) {
+        rightbox.style.width = "85vw";
+    } else {
+        rightbox.style.width = "96vw";
+    }
+}
+
 menu.addEventListener('click', () => {
+    setRightBoxWidth();
+    window.addEventListener('resize', setRightBoxWidth);
     if (leftbox.style.display === "none") {
         leftbox.style.display = "block";
         rightbox.style.width = "71vw";
         rightbox.style.borderRadius = "0";
     } else {
         leftbox.style.display = "none";
-        rightbox.style.width = "96vw";
+        setRightBoxWidth(); // Adjust width based on viewport width
         rightbox.style.borderRadius = "8px 0 0 5px";
     }
 });
-
 //add icon active action
 // Add click event listener to each icon
 icons.forEach(icon => {
@@ -65,19 +74,42 @@ callicon.addEventListener('click', () => {
             <div class="chatbox">
                 <div class="chats">
                     <div class="profilepic">
-                        <img src="images/photopro.jpg" alt="">
+                        <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
                         <p id="name">Harsh Pandey</p>
                         <p id="msg"><i class="ri-phone-line"></i> Outgoing</p>
                     </div>
                     <div class="time">Yesteday</div>
-                </div>`
+                </div>
+
+                 <div class="chats">
+                    <div class="profilepic">
+                        <img src="images/glow.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p id="name">Mohit Pandey</p>
+                        <p id="msg" style="color:#eb8080;"> <i class="fas fa-phone-slash"></i> Missed (2)</p>
+                    </div>
+                    <div class="time">05/07/2024</div>
+                </div>
+
+                 <div class="chats">
+                    <div class="profilepic">
+                        <img src="images/do.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p id="name">Uddeshya Awasthi</p>
+                        <p id="msg" style="color:#eb8080;"> <i class="ri-video-off-line"></i> Missed (5)</p>
+                    </div>
+                    <div class="time">03/02/2024</div>
+                </div>
+                `
 });
 
 chaticon.addEventListener('click', () => {
     leftbox.innerHTML = `
-     <div class="chat">
+    <div class="chat">
                 <p>Chats</p>
                 <div class="chatsymbols">
                     <i class="ri-chat-new-line"></i>
@@ -94,7 +126,7 @@ chaticon.addEventListener('click', () => {
             <div class="chatbox">
                 <div class="chats">
                     <div class="profilepic">
-                        <img src="images/photopro.jpg" alt="">
+                        <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
                         <p id="name">Harsh Pandey</p>
@@ -125,7 +157,7 @@ chaticon.addEventListener('click', () => {
                 </div>
                 <div class="chats">
                     <div class="profilepic">
-                        <img src="images/back.jpg" alt="">
+                        <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
                         <p id="name">Darshan Rawal</p>
@@ -145,7 +177,7 @@ chaticon.addEventListener('click', () => {
                 </div>
                 <div class="chats">
                     <div class="profilepic">
-                        <img src="images/IMG_20230224_215236_204.jpg" alt="">
+                        <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
                         <p id="name">Sanjay Pandey</p>
@@ -155,10 +187,10 @@ chaticon.addEventListener('click', () => {
                 </div>
                 <div class="chats">
                     <div class="profilepic">
-                        <img src="images/WhatsApp Image 2023-05-06 at 08.28.57.jpg" alt="">
+                        <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Anjali Mehta</p>
+                        <p id="name">Nischay Diwedi</p>
                         <p id="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sint!</p>
                     </div>
                     <div class="time">8:30 Pm</div>
@@ -168,14 +200,14 @@ chaticon.addEventListener('click', () => {
                         <img src="images/WhatsApp Image 2023-07-12 at 20.44.18.jpg" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Seema Lard</p>
+                        <p id="name">Sakasham Sahni</p>
                         <p id="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sint!</p>
                     </div>
                     <div class="time">7:41 Am</div>
                 </div>
                 <div class="chats">
                     <div class="profilepic">
-                        <img src="images/1659247349785.jpg" alt="">
+                        <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
                         <p id="name">Mohit Pandey</p>
@@ -188,7 +220,7 @@ chaticon.addEventListener('click', () => {
                         <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Mohit Pandey</p>
+                        <p id="name">Rakshit Joshi</p>
                         <p id="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sint!</p>
                     </div>
                     <div class="time">5:15 Pm</div>
@@ -210,7 +242,7 @@ statusicon.addEventListener('click', () => {
             <div class="chatbox">
                 <div style="justify-content: start; gap: 20px;" class="chats">
                     <div style="border: 3px solid green; padding:2px;" class="profilepic">
-                        <img src="images/photopro.jpg" alt="">
+                        <img src="images/photo.jpg" alt="">
                     </div>
                     <div class="info">
                         <p id="name">Mohit Pandey</p>

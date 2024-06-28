@@ -294,3 +294,18 @@ settings.addEventListener('click', (event) => {
 document.addEventListener('click', (event) => {
     settingspage.style.left = "-500px"
 })
+
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Disable text selection
+document.addEventListener('mousedown', function(e) {
+    e.preventDefault();
+});
+
+// Disable selection start
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});

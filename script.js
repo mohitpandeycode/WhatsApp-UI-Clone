@@ -23,11 +23,17 @@ function setRightBoxWidth() {
 menu.addEventListener('click', () => {
     setRightBoxWidth();
     window.addEventListener('resize', setRightBoxWidth);
-    if (leftbox.style.display === "none") {
+    if (leftbox.style.display === "none" && (window.innerWidth >= 600)) {
         leftbox.style.display = "block";
         rightbox.style.width = "71vw";
         rightbox.style.borderRadius = "0";
-    } else {
+    } 
+    else if(leftbox.style.display === "none" && (window.innerWidth <= 600)){
+        leftbox.style.display = "block";
+        rightbox.style.width = "85vw";
+        rightbox.style.borderRadius = "0";
+    }
+    else {
         leftbox.style.display = "none";
         setRightBoxWidth(); // Adjust width based on viewport width
         rightbox.style.borderRadius = "8px 0 0 5px";

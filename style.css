@@ -576,6 +576,9 @@ input:checked+label:after {
 label:active:after {
     width: 20px;
 }
+#on{
+    width: 65px;
+}
 
 @media(max-width: 400px) {
     .left {
@@ -584,23 +587,27 @@ label:active:after {
     }
 
     .call {
-        padding: 0px;
+        padding: 1px;
     }
 
     #msg {
         width: 125px;
     }
 
+    .chat-container {
+        font-size: 13px;
+    }
+
     .right {
-        width: 73vw;
+        width: 74vw;
     }
 
     .profilepage {
-        width: 95vw;
+        width: 92vw;
     }
 
     .settingspage {
-        width: 95vw;
+        width: 92vw;
     }
 
     .optionmenu {

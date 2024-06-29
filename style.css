@@ -603,11 +603,15 @@ label:active:after {
     }
 
     .profilepage {
-        width: 92vw;
+        width: 94vw;
     }
 
     .settingspage {
-        width: 92vw;
+        width: 94vw;
+    }
+
+    button{
+        padding: 5px 10px;
     }
 
     .optionmenu {

@@ -612,6 +612,7 @@ label:active:after {
 
     button{
         padding: 5px 10px;
+        font-size: 15px;
     }
 
     .optionmenu {

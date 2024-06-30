@@ -3,6 +3,8 @@ let menu = document.querySelector(".menu");
 let callicon = document.querySelector(".callicon");
 let statusicon = document.querySelector(".statusicon");
 let chat = document.querySelectorAll(".chats");
+let addchat = document.querySelector(".addchat");
+let addnewchat = document.querySelector(".addnewchat");
 let profilepage = document.querySelector(".profilepage");
 let settingspage = document.querySelector(".settingspage");
 let user = document.querySelector(".user")
@@ -404,6 +406,14 @@ endvdcall.addEventListener('click', () => {
 });
 
 
+// new chat icon working
 
+addnewchat.addEventListener('click',()=>{
+    if(addchat.style.height!="170px"){
+        addchat.style.height="170px"
+    }else{
+        addchat.style.height="0px"
+    }
+})
 
 

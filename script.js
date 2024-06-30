@@ -339,11 +339,11 @@ function stopAudio() {
 
 // Event listener for voicecall click
 voicecall.addEventListener('click', () => {
-    if(callbox.style.display != "flex"){
+    if(callbox.style.display != "flex" && videocallbox.style.display != "flex"){
         playRepeatedly(); // Start playing audio repeatedly
         callbox.style.display = "flex";
     }else{
-        alert("call not sent!")
+        alert("call not sent!! You are already in a call")
     }
 });
 endcall.addEventListener('click', () => {
@@ -377,12 +377,12 @@ function stopCamera() {
 }
 
 videocall.addEventListener('click', () => {
-    if(stream == null){
+    if(videocallbox.style.display != "flex" && callbox.style.display != "flex" ){
         openCamera();
         videocallbox.style.display = "flex"
         playRepeatedly();
     }else{
-        alert("Call not sent!")
+        alert("Call not sent!! You are already in a call")
     }
 })
 

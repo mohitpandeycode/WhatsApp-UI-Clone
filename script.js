@@ -10,6 +10,18 @@ let settings = document.querySelector(".settings")
 let leftbox = document.querySelector('.left')
 let rightbox = document.querySelector('.right')
 let icons = document.querySelectorAll('i')
+let callbox = document.querySelector(".callbox")
+let voicecall = document.querySelector(".voicecall")
+let videocall = document.querySelector(".videocall")
+let videocallbox = document.querySelector(".videocallbox")
+const videoElement = document.getElementById('videoElement');
+let endcall = document.querySelector(".endcall")
+let endvdcall = document.querySelector(".endvdcall")
+let stopButton = document.querySelector(".stopButton")
+let stp = document.querySelector(".stp")
+var audio = new Audio('images/ring.mp3');
+let stream;
+
 
 // Add a click event listener  to the menu button
 function setRightBoxWidth() {
@@ -27,8 +39,8 @@ menu.addEventListener('click', () => {
         leftbox.style.display = "block";
         rightbox.style.width = "71vw";
         rightbox.style.borderRadius = "0";
-    } 
-    else if(leftbox.style.display === "none" && (window.innerWidth <= 600)){
+    }
+    else if (leftbox.style.display === "none" && (window.innerWidth <= 600)) {
         leftbox.style.display = "block";
         rightbox.style.width = "85vw";
         rightbox.style.borderRadius = "0";
@@ -52,11 +64,13 @@ icons.forEach(icon => {
             i.style.borderRadius = '';
             i.style.borderLeft = '';
         });
+        if (!icon.classList.contains('callicons')) {
+            // Add the active class to the clicked icon
+            icon.style.backgroundColor = '#252525';
+            icon.style.borderRadius = '3px';
+            icon.style.borderLeft = '3px solid rgb(6, 167, 6)';
 
-        // Add the active class to the clicked icon
-        icon.style.backgroundColor = '#252525';
-        icon.style.borderRadius = '3px';
-        icon.style.borderLeft = '3px solid rgb(6, 167, 6)';
+        }
     });
 });
 
@@ -296,16 +310,100 @@ document.addEventListener('click', (event) => {
 })
 
 
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-
-// Disable text selection
-document.addEventListener('mousedown', function(e) {
+document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
 });
 
 // Disable selection start
-document.addEventListener('selectstart', function(e) {
+document.addEventListener('selectstart', function (e) {
     e.preventDefault();
 });
+
+// call box whn click on call btn
+
+
+// Function to play audio repeatedly
+function playRepeatedly() {
+    audio.addEventListener('ended', function () {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+    audio.play();
+}
+
+// Function to stop playing audio
+function stopAudio() {
+    audio.pause();
+    audio.currentTime = 0;
+}
+
+// Event listener for voicecall click
+voicecall.addEventListener('click', () => {
+    if(callbox.style.display != "flex"){
+        playRepeatedly(); // Start playing audio repeatedly
+        callbox.style.display = "flex";
+    }else{
+        alert("call not sent!")
+    }
+});
+endcall.addEventListener('click', () => {
+    callbox.style.display = "none"
+    audio.pause();
+    audio.currentTime = 0;
+})
+
+// videocall box making 
+
+// Function to open the camera stream
+async function openCamera() {
+    try {
+        // Request access to the camera
+        stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+        // Set the video stream as the source of the video element
+        videoElement.srcObject = stream;
+    } catch (error) {
+        console.error('Error accessing the camera:', error);
+    }
+}
+
+// Function to stop the camera stream
+function stopCamera() {
+    if (stream) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+        videoElement.srcObject = null;
+    }
+}
+
+videocall.addEventListener('click', () => {
+    if(stream == null){
+        openCamera();
+        videocallbox.style.display = "flex"
+        playRepeatedly();
+    }else{
+        alert("Call not sent!")
+    }
+})
+
+stp.addEventListener('click', () => {
+    if(videoElement.srcObject == stream){
+        stopCamera();
+        stp.innerHTML='<i class="ri-video-off-line callicons stopButton"></i>'
+    }else{
+        stp.innerHTML='<i class="ri-video-on-line callicons stopButton"></i>'
+        openCamera()
+    }
+});
+
+endvdcall.addEventListener('click', () => {
+    videocallbox.style.display = "none";
+    audio.pause();
+    audio.currentTime = 0;
+    stopCamera();
+});
+
+
+
+
+

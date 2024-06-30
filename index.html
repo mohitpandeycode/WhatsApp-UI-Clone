@@ -66,7 +66,7 @@
                         <img src="images/blank-profile-picture-973460_1280.png" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Harsh Pandey</p>
+                        <p id="name">Ashish Pandey</p>
                         <p id="msg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, quae?</p>
                     </div>
                     <div class="time">4:41 Pm</div>
@@ -77,7 +77,7 @@
                         <img src="images/photo.jpg" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Mohit Pandey</p>
+                        <p id="name">Harsh Pandey</p>
                         <p id="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sint!</p>
                     </div>
                     <div class="time">2:45 Pm</div>
@@ -87,7 +87,7 @@
                         <img src="images/glow.png" alt="">
                     </div>
                     <div class="info">
-                        <p id="name">Ashish Pandey</p>
+                        <p id="name">Mohit Pandey</p>
                         <p id="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, sint!</p>
                     </div>
                     <div class="time">11:41 Am</div>
@@ -179,11 +179,13 @@
                     </div>
                 </div>
 
+                
+
                 <div class="call">
                     <div class="calling">
-                        <i class="ri-phone-line"></i>
+                        <i class="ri-phone-line voicecall"></i>
                         <hr>
-                        <i class="ri-video-on-line"></i>
+                        <i class="ri-video-on-line videocall"></i>
                     </div>
                     <i class="ri-search-line"></i>
                 </div>
@@ -320,6 +322,70 @@
             </div>
         </div>
     </div>
+
+<!-- Voice call button functioms -->
+    <div class="callbox">
+        <div class="calltop">
+            <div class="logo">
+                <i class="ri-whatsapp-line"></i>
+                <p style="color: white;">WhatsApp</p>
+            </div> 
+            <div class="discr">
+                <i class="ri-lock-line"></i>
+                End-to-end encryption
+            </div>
+        </div>
+
+        <div class="innercall">
+            <img src="images/glow.png" alt="">
+            <p class="name">Mohit Pandey</p>
+            <p>Ringing...</p>
+        </div>
+
+        <div class="btcall">
+            <i class="ri-user-add-line callicons"></i>
+            <i class="ri-video-on-line callicons"></i>
+            <i class="ri-mic-line callicons"></i>
+            <i class="ri-more-2-fill callicons"></i>
+            <img class="endcall" src="images/phone.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="callbox videocallbox">
+        <div class="calltop">
+            <div class="logo">
+                <i class="ri-whatsapp-line"></i>
+                <p style="color: white;">WhatsApp</p>
+            </div> 
+            <div class="discr">
+                <i class="ri-lock-line"></i>
+                End-to-end encryption
+            </div>
+        </div>
+
+        <div class="innercall">
+            <img src="images/glow.png" alt="">
+            <p class="name">Mohit Pandey</p>
+            <p>Ringing...</p>
+            <div class="camframe">
+                <video id="videoElement" autoplay playsinline></video>
+            </div>
+            
+        </div>
+
+        <div class="btcall">
+            <i class="ri-user-add-line callicons"></i>
+            <div class="stp">
+                <i class="ri-video-on-line callicons stopButton"></i>
+            </div>
+            <i class="ri-mic-line callicons"></i>
+            <i class="ri-more-2-fill callicons"></i>
+            <img class="endcall endvdcall" src="images/phone.png" alt="">
+        </div>
+    </div>
+
+
 
     <script src="script.js"></script>
     <script src="
